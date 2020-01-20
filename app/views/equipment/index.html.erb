@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Equipment</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Make manufacturer</th>
+      <th>Country of origin</th>
+      <th>Serial number</th>
+      <th>Quantity</th>
+      <th>Acquisition date</th>
+      <th>Acquisition cost</th>
+      <th>Estimated useful years</th>
+      <th>Year commissioned</th>
+      <th>Operational</th>
+      <th>Out of order</th>
+      <th>Operational with issues</th>
+      <th>Unverifiable</th>
+      <th>Department location</th>
+      <th>Total</th>
+      <th>Remarks</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @equipment.each do |equipment| %>
+      <tr>
+        <td><%= equipment.description %></td>
+        <td><%= equipment.make_manufacturer %></td>
+        <td><%= equipment.country_of_origin %></td>
+        <td><%= equipment.serial_number %></td>
+        <td><%= equipment.quantity %></td>
+        <td><%= equipment.acquisition_date %></td>
+        <td><%= equipment.acquisition_cost %></td>
+        <td><%= equipment.estimated_useful_years %></td>
+        <td><%= equipment.year_commissioned %></td>
+        <td><%= equipment.operational %></td>
+        <td><%= equipment.out_of_order %></td>
+        <td><%= equipment.operational_with_issues %></td>
+        <td><%= equipment.unverifiable %></td>
+        <td><%= equipment.department_location %></td>
+        <td><%= equipment.total %></td>
+        <td><%= equipment.remarks %></td>
+        <td><%= link_to 'Show', equipment %></td>
+        <td><%= link_to 'Edit', edit_equipment_path(equipment) %></td>
+        <td><%= link_to 'Destroy', equipment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Equipment', new_equipment_path %>

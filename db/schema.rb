@@ -10,9 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_01_20_173154) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "equipment", force: :cascade do |t|
+    t.text "description"
+    t.string "make_manufacturer"
+    t.string "country_of_origin"
+    t.string "serial_number"
+    t.float "quantity"
+    t.datetime "acquisition_date"
+    t.decimal "acquisition_cost", precision: 5, scale: 2
+    t.string "estimated_useful_years"
+    t.integer "year_commissioned"
+    t.boolean "operational"
+    t.string "out_of_order"
+    t.string "operational_with_issues"
+    t.boolean "unverifiable"
+    t.string "department_location"
+    t.float "total"
+    t.text "remarks"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
 end

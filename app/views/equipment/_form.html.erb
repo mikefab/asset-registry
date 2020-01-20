@@ -1,0 +1,97 @@
+<%= form_with(model: equipment, local: true) do |form| %>
+  <% if equipment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(equipment.errors.count, "error") %> prohibited this equipment from being saved:</h2>
+
+      <ul>
+        <% equipment.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :make_manufacturer %>
+    <%= form.text_field :make_manufacturer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :country_of_origin %>
+    <%= form.text_field :country_of_origin %>
+  </div>
+
+  <div class="field">
+    <%= form.label :serial_number %>
+    <%= form.text_field :serial_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quantity %>
+    <%= form.text_field :quantity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :acquisition_date %>
+    <%= form.date_select :acquisition_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :acquisition_cost %>
+    <%= form.text_field :acquisition_cost %>
+  </div>
+
+  <div class="field">
+    <%= form.label :estimated_useful_years %>
+    <%= form.text_field :estimated_useful_years %>
+  </div>
+
+  <div class="field">
+    <%= form.label :year_commissioned %>
+    <%= form.number_field :year_commissioned %>
+  </div>
+
+  <div class="field">
+    <%= form.label :operational %>
+    <%= form.check_box :operational %>
+  </div>
+
+  <div class="field">
+    <%= form.label :out_of_order %>
+    <%= form.text_field :out_of_order %>
+  </div>
+
+  <div class="field">
+    <%= form.label :operational_with_issues %>
+    <%= form.text_field :operational_with_issues %>
+  </div>
+
+  <div class="field">
+    <%= form.label :unverifiable %>
+    <%= form.check_box :unverifiable %>
+  </div>
+
+  <div class="field">
+    <%= form.label :department_location %>
+    <%= form.text_field :department_location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total %>
+    <%= form.text_field :total %>
+  </div>
+
+  <div class="field">
+    <%= form.label :remarks %>
+    <%= form.text_area :remarks %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

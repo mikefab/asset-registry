@@ -1,0 +1,84 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @equipment.description %>
+</p>
+
+<p>
+  <strong>Make manufacturer:</strong>
+  <%= @equipment.make_manufacturer %>
+</p>
+
+<p>
+  <strong>Country of origin:</strong>
+  <%= @equipment.country_of_origin %>
+</p>
+
+<p>
+  <strong>Serial number:</strong>
+  <%= @equipment.serial_number %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @equipment.quantity %>
+</p>
+
+<p>
+  <strong>Acquisition date:</strong>
+  <%= @equipment.acquisition_date %>
+</p>
+
+<p>
+  <strong>Acquisition cost:</strong>
+  <%= @equipment.acquisition_cost %>
+</p>
+
+<p>
+  <strong>Estimated useful years:</strong>
+  <%= @equipment.estimated_useful_years %>
+</p>
+
+<p>
+  <strong>Year commissioned:</strong>
+  <%= @equipment.year_commissioned %>
+</p>
+
+<p>
+  <strong>Operational:</strong>
+  <%= @equipment.operational %>
+</p>
+
+<p>
+  <strong>Out of order:</strong>
+  <%= @equipment.out_of_order %>
+</p>
+
+<p>
+  <strong>Operational with issues:</strong>
+  <%= @equipment.operational_with_issues %>
+</p>
+
+<p>
+  <strong>Unverifiable:</strong>
+  <%= @equipment.unverifiable %>
+</p>
+
+<p>
+  <strong>Department location:</strong>
+  <%= @equipment.department_location %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @equipment.total %>
+</p>
+
+<p>
+  <strong>Remarks:</strong>
+  <%= @equipment.remarks %>
+</p>
+
+<%= link_to 'Edit', edit_equipment_path(@equipment) %> |
+<%= link_to 'Back', equipment_index_path %>
