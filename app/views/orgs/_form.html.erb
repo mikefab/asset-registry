@@ -1,0 +1,62 @@
+<%= form_with(model: org, local: true) do |form| %>
+  <% if org.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(org.errors.count, "error") %> prohibited this org from being saved:</h2>
+
+      <ul>
+        <% org.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_area :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lat %>
+    <%= form.text_field :lat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lon %>
+    <%= form.text_field :lon %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kind %>
+    <%= form.text_field :kind %>
+  </div>
+
+  <div class="field">
+    <%= form.label :region %>
+    <%= form.text_field :region %>
+  </div>
+
+  <div class="field">
+    <%= form.label :district %>
+    <%= form.text_field :district %>
+  </div>
+
+  <div class="field">
+    <%= form.label :chiefdom %>
+    <%= form.text_field :chiefdom %>
+  </div>
+
+  <div class="field">
+    <%= form.label :section %>
+    <%= form.text_field :section %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

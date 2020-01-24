@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @org.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @org.address %>
+</p>
+
+<p>
+  <strong>Lat:</strong>
+  <%= @org.lat %>
+</p>
+
+<p>
+  <strong>Lon:</strong>
+  <%= @org.lon %>
+</p>
+
+<p>
+  <strong>Kind:</strong>
+  <%= @org.kind %>
+</p>
+
+<p>
+  <strong>Region:</strong>
+  <%= @org.region %>
+</p>
+
+<p>
+  <strong>District:</strong>
+  <%= @org.district %>
+</p>
+
+<p>
+  <strong>Chiefdom:</strong>
+  <%= @org.chiefdom %>
+</p>
+
+<p>
+  <strong>Section:</strong>
+  <%= @org.section %>
+</p>
+
+<%= link_to 'Edit', edit_org_path(@org) %> |
+<%= link_to 'Back', orgs_path %>
