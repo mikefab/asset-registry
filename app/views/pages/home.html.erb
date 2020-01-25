@@ -1,6 +1,6 @@
 <h1>Medical Equipment Registry</h1>
 <% if current_user %>
-  <% if current_user.org.name = 'Unassigned' %>
+  <% if current_user.org.name.match('Unassigned') %>
     You need an org, ba
   <% else %>
     <%= link_to "Register Equipment", equipment_index_url%>

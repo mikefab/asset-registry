@@ -9,6 +9,8 @@ class User < ApplicationRecord
  has_many :equipment
  before_validation :set_org
  def set_org
-    self.org_id = Org.where(name: 'Unassigned')[0].id
+    if !self.org then
+      self.org_id = Org.where(name: 'Unassigned')[0].id
+    end
  end
 end

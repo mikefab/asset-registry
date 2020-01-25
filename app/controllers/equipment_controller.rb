@@ -1,6 +1,7 @@
 class EquipmentController < ApplicationController
   before_action :set_equipment, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :check_user_has_org, only: [:index]
   # GET /equipment
   # GET /equipment.json
   def index
@@ -11,7 +12,6 @@ class EquipmentController < ApplicationController
   # GET /equipment/1
   # GET /equipment/1.json
   def show
-    print "SSSsssSSSs"
   end
 
   # GET /equipment/new
@@ -67,6 +67,13 @@ class EquipmentController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_equipment
       @equipment = Equipment.find(params[:id])
+    end
+
+    def check_user_has_org
+      print current_user.org.name + ' uuuuu'
+      if current_user.org.name.match('Unassigned') then
+        redirect_to root_path
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
