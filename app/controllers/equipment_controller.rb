@@ -1,15 +1,17 @@
 class EquipmentController < ApplicationController
   before_action :set_equipment, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /equipment
   # GET /equipment.json
   def index
-    @equipment = Equipment.all
+    current_org = current_user.org
+    @equipment = current_org.equipment
   end
 
   # GET /equipment/1
   # GET /equipment/1.json
   def show
+    print "SSSsssSSSs"
   end
 
   # GET /equipment/new
@@ -25,7 +27,7 @@ class EquipmentController < ApplicationController
   # POST /equipment.json
   def create
     @equipment = Equipment.new(equipment_params)
-
+    @equipment.user = current_user
     respond_to do |format|
       if @equipment.save
         format.html { redirect_to @equipment, notice: 'Equipment was successfully created.' }

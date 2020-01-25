@@ -1,6 +1,6 @@
 class OrgsController < ApplicationController
   before_action :set_org, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /orgs
   # GET /orgs.json
   def index
