@@ -19,6 +19,6 @@ Things you may want to cover:
 
 * Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
+docker-compose build
+docker-compose run web rake db:create db:migrate db:seed
+docker-compose up

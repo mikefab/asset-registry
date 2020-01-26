@@ -87,7 +87,7 @@ ActiveRecord::Schema.define(version: 2020_01_25_215920) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "admin", default: false
-    t.integer "org_id"
+    t.bigint "org_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["org_id"], name: "index_users_on_org_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
