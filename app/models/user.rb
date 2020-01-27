@@ -6,7 +6,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
  belongs_to :org
- has_many :equipment
  before_validation :set_org
  def set_org
     if !self.org then

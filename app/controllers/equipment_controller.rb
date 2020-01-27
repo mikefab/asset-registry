@@ -27,7 +27,8 @@ class EquipmentController < ApplicationController
   # POST /equipment.json
   def create
     @equipment = Equipment.new(equipment_params)
-    @equipment.user = current_user
+    @equipment.org = current_user.org
+    @equipment.user_id = current_user.id
     respond_to do |format|
       if @equipment.save
         format.html { redirect_to @equipment, notice: 'Equipment was successfully created.' }

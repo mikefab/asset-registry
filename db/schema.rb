@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_25_215920) do
+ActiveRecord::Schema.define(version: 2020_01_27_121848) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,8 +60,9 @@ ActiveRecord::Schema.define(version: 2020_01_25_215920) do
     t.text "remarks"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_equipment_on_user_id"
+    t.bigint "org_id", null: false
+    t.integer "user_id", default: 0
+    t.index ["org_id"], name: "index_equipment_on_org_id"
   end
 
   create_table "orgs", force: :cascade do |t|
@@ -105,6 +106,6 @@ ActiveRecord::Schema.define(version: 2020_01_25_215920) do
     t.index ["reset_password_token"], name: "index_views_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "equipment", "users"
+  add_foreign_key "equipment", "orgs"
   add_foreign_key "users", "orgs"
 end
