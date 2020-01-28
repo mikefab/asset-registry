@@ -4,7 +4,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
+ has_many :equipment
  belongs_to :org
  before_validation :set_org
  def set_org
