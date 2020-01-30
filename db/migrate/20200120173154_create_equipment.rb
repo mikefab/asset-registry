@@ -8,8 +8,8 @@ class CreateEquipment < ActiveRecord::Migration[6.0]
       t.float :quantity
       t.datetime :acquisition_date
       t.decimal :acquisition_cost, precision: 5, scale: 2
-      t.string :estimated_useful_years
-      t.integer :year_commissioned
+      t.decimal :estimated_useful_years, precision: 5, scale: 2
+      t.datetime :year_commissioned
       t.boolean :operational
       t.string :out_of_order
       t.string :operational_with_issues
