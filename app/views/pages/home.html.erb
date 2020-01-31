@@ -1,7 +1,7 @@
 <h1>Medical Equipment Registry</h1>
 <% if current_user %>
   <% if current_user.org.name.match('Unassigned') %>
-    You need an org, bro
+    Thank you for signing up. Once an admin links you to a facility, you will be able to register assets.
   <% else %>
     <%= link_to "Register Equipment", equipment_index_url%>
   <% end %>
