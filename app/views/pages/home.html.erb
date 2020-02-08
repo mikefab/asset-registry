@@ -3,6 +3,7 @@
   <% if current_user.org.name.match('Unassigned') %>
     Thank you for signing up. Once an admin links you to a facility, you will be able to register assets.
   <% else %>
+    <h2><%= current_user.org.name %></h2>
     <%= link_to "Register Equipment", equipment_index_url%>
   <% end %>
 
